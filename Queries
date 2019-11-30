@@ -1,0 +1,11 @@
+Select * from Weather where SensorID = ?
+
+select max(Temperature) from Weather where DateTime > ? and DateTime < ?
+
+select min(Temperature) from Weather where DateTime > ? and DateTime < ?
+
+
+select max(RainFall) from Weather where DateTime > ? and DateTime < ?
+
+select min(RainFall) from Weather where DateTime > ? and DateTime < ?
+ 
