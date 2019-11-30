@@ -9,14 +9,14 @@ import javax.persistence.Table;
 @Table
 public class Weather {
 	@Id
-	Integer transactionId;
+	public Integer transactionId;
 
 	@ManyToOne
-	CitiesMaster sensorId;
+	public CitiesMaster sensorId;
 
-	Integer dateTime;
+	public Integer dateTime;
 
-	Integer temperature;
+	public Integer temperature;
 
-	Integer rainfall;
+	public Integer rainfall;
 }
