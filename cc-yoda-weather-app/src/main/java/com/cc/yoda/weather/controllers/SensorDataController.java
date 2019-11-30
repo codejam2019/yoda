@@ -1,5 +1,6 @@
 package com.cc.yoda.weather.controllers;
 
+import javax.websocket.server.PathParam;
 import javax.xml.ws.Response;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class SensorDataController {
 	}
 
 	@RequestMapping("/list")
-	public Response<String> getSensorList(String country, String city) {
+	public Response<String> getSensorList(@PathParam("country") String country, @PathParam("city") String city) {
 		Response<String> response = null;
 
 		return response;

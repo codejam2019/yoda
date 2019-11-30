@@ -6,10 +6,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Geo {
+public class CitiesMaster {
 
 	@Id
-	Integer id;
+	Integer citiesMastercol;
 
 	String country;
 
