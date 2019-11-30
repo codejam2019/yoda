@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS `YodaWeather`.`citiesMaster` (
+  `city` VARCHAR(256) NULL,
+  `country` VARCHAR(45) NULL,
+  `sensorid` VARCHAR(45) NULL,
+  `citiesMastercol` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`citiesMastercol`),
+  INDEX `priind1` (`city` ASC) INVISIBLE,
+  INDEX `secind1` (`country` ASC) VISIBLE)
+ENGINE = InnoDB
+COMMENT = '	'
+
+CREATE TABLE IF NOT EXISTS `YodaWeather`.`Weather` (
+  `DateTime` INT NULL,
+  `SensaorID` INT NULL,
+  `Temperature` DECIMAL(10) NULL,
+  `RainFall` DECIMAL(10) NULL,
+  `TransactionID` BIGINT(1000) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`TransactionID`),
+  UNIQUE INDEX `TransactionID_UNIQUE` (`TransactionID` ASC) VISIBLE)
+ENGINE = InnoDB
