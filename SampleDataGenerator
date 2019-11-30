@@ -1,0 +1,40 @@
+package com.example.demo;
+
+import java.util.LinkedList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class RandomGenerator {
+	
+	@Autowired
+	private WeatherDataRepository weatherRepository;
+
+	private LinkedList<WeatherDataPOJO> listWeatherData = new LinkedList<WeatherDataPOJO>();
+	public void generateWeatherData() {
+		for(int i = 0; i < 100; i ++) {
+			Long nextTimeStamp = (long) (i * 5 * 60 * 1000); 
+			for(int j=0; j< 10000;j++) {
+				WeatherDataPOJO WDP = new WeatherDataPOJO();
+				WDP.setSensorID((int)j%10000);
+				WDP.setTemperature((int) getRandomIntegerBetweenRange(2,55));
+				WDP.setTemperature((int) getRandomIntegerBetweenRange(2,55));
+				WDP.setTimeStamp(System.currentTimeMillis()/1000+(int) getRandomIntegerBetweenRange(0,300000) + nextTimeStamp);
+				listWeatherData.add(WDP);
+			}
+		}
+		
+		weatherRepository.saveAll(listWeatherData);
+	}
+	
+	public static double getRandomIntegerBetweenRange(double min, double max){
+	    double x = (int)(Math.random()*((max-min)+1))+min;
+	    return x;
+	}
+	
+	public void generateSensorIDData() {
+		for(int i=0; i < 1000; ) {
+			
+		}
+		
+	}
+}
