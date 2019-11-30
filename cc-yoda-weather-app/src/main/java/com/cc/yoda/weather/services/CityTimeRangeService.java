@@ -1,6 +1,7 @@
 package com.cc.yoda.weather.services;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,6 @@ public class CityTimeRangeService {
 
 	public Result1 getResults(String type, String sensorId, String dateTimeFrom, String dateTimeTo) {
 		Result1 result = new Result1();
-		DateTimeFormatter dtf = 
-		String from = LocalDateTime.parse(dateTimeFrom, formatter);
-		String to;
 		List<Weather> results = weatherRepo.findAllBySensorIdAndTimeRange(sensorId, dateTimeFrom, dateTimeTo);
 		return result;
 	}
