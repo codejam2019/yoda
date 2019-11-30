@@ -18,7 +18,7 @@ public class CityTimeRangeController {
 	public Response<Object> getSensorDataByCityTimeRange(String type, String sensorId, String dateTimeFrom,
 			String dateTimeTo) {
 		Response<Object> response = null;
-		cityTimeRangeService.asdf();
+		cityTimeRangeService.getResults(type, sensorId, dateTimeFrom, dateTimeTo);
 		return response;
 	}
 }
