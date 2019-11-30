@@ -4,6 +4,7 @@ import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cc.yoda.weather.services.CityTimeRangeService;
@@ -15,8 +16,9 @@ public class CityTimeRangeController {
 	private CityTimeRangeService cityTimeRangeService;
 
 	@GetMapping(value = "/data")
-	public Response<Object> getSensorDataByCityTimeRange(String type, String sensorId, String dateTimeFrom,
-			String dateTimeTo) {
+	public Response<Object> getSensorDataByCityTimeRange(@RequestParam("type") String type,
+			@RequestParam("sensorId") String sensorId, @RequestParam("dateTimeFrom") String dateTimeFrom,
+			@RequestParam("dateTimeTo") String dateTimeTo) {
 		Response<Object> response = null;
 		cityTimeRangeService.getResults(type, sensorId, dateTimeFrom, dateTimeTo);
 		return response;
